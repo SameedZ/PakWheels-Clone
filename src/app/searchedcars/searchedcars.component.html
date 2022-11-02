@@ -1,0 +1,174 @@
+  <!--Search Box Start-->
+  <section class="search-box">
+    <div class="search-box__container">
+      <form class="search-box__form">
+        <ul class="list-unstyled search-box__main clearfix">
+          <li class="search-box__input">
+            <select
+              #city
+              class="selectpicker"
+              aria-label="Default select example"
+            >
+              <option selected>City</option>
+              <option value="Islamabad">Islamabad</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Lahore">Lahore</option>
+              <option value="Faisalabad">Faisalabad</option>
+              <option value="Rawalpindi">Rawalpindi</option>
+            </select>
+          </li>
+          <li class="search-box__input">
+            <select
+              #company
+              class="selectpicker"
+              aria-label="Default select example"
+            >
+              <option selected>Company</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Suzuki">Suzuki</option>
+              <option value="Honda">Honda</option>
+              <option value="Daihatsu">Daihatsu</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Mercedes">Mercedes</option>
+              <option value="Mitsubishi">Mitsubishi</option>
+              <option value="KIA">KIA</option>
+              <option value="Changhan">Changhan</option>
+            </select>
+          </li>
+          <li class="search-box__input">
+            <select #vehicletype class="selectpicker" aria-label="Default select example">
+              <option selected>Vehicle Type</option>
+              <option value="Car">Car</option>
+              <option value="Bike">Bike</option>
+            </select>
+          </li>
+          <li class="search-box__input">
+            <label>Model Year</label>
+            <input
+              #modelyear
+              class="search-box__year"
+              type="number"
+              min="1900"
+              max="2099"
+              step="1"
+              value="2016"
+            />
+          </li>
+
+          <li class="search-box__input">
+            <label>Mileage per liter KM</label>
+            <input
+              #mileage
+              class="search-box__year"
+              type="number"
+              min="1"
+              max="35"
+              step="1"
+              value="9"
+            />
+          </li>
+
+          <li class="search-box__input">
+            <label>Color</label>
+            <input #color class="search-box__year" type="text" value="Any" />
+          </li>
+
+          <li class="search-box__input">
+            <label>Engine Capacity: CC</label>
+            <input
+              #enginecapacity
+              class="search-box__year"
+              type="number"
+              min="1"
+              max="10000"
+              step="100"
+              value="1100"
+            />
+          </li>
+
+          <li class="search-box__input">
+            <label>Price Range: PKR</label>
+            <input
+              #pricerange
+              class="search-box__year"
+              type="number"
+              min="10000"
+              max="1000000"
+              step="10000"
+              value="30000"
+            />
+          </li>
+
+          <li class="search-box__input">
+            <label>`</label>
+            <button
+              (click)="searchedvehicles(city.value, company.value,vehicletype.value,modelyear.value,mileage.value,color.value,enginecapacity.value,pricerange.value)"
+              
+              type="submit"
+              class="search-box__btn"
+            >
+              Find Your Car
+            </button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </section>
+  <!--Search Box  Start-->
+
+  <!--Search Result  Start-->
+
+
+  <!--Explore Car Start-->
+
+  <section class="explore-car" >
+    <div class="explore-car__container">
+      <div class="section-title text-center">
+        
+      <h2 class="section-title__title" ng-if="searchedstatus">Results</h2>
+      </div>
+      <div class="row">
+        <div
+          class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+          data-wow-delay="100ms" *ngFor="let searchedR of searchresult"
+        >
+          <!--Explore Car Single-->
+          <div class="explore-car__single">
+            <div class="explore-car__img">
+              <img [src]="searchedR.thumbnail" alt="No Picture Found" />
+              <div class="explore-car__icon">
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+            <div class="explore-car__content">
+              <h5 class="explore-car__sub-title">Type: {{searchedR.vehicletype}}</h5>
+              <h3 class="explore-car__title">
+                <a href="listings-details.html">{{searchedR.title}}</a>
+              </h3>
+              <p class="explore-car__price"><span>{{searchedR.price}} </span>PKR</p>
+              <ul class="list-unstyled explore-car__details">
+                <li><a href="#">{{searchedR.model}} Color: {{searchedR.color}}</a></li>
+                <li><a href="#">{{searchedR.location}}</a></li>
+              </ul>
+              <ul class="list-unstyled explore-car__details">
+                <li><a href="#">Engine {{searchedR.enginecapacity}} cc</a></li>
+                <li><a href="#">{{searchedR.transmission}}</a></li>
+                <li><a href="#">Mileage {{searchedR.mileage}} Kms</a></li>
+                <li><a href="#">Auto</a></li>
+              </ul>
+              <label>Seller Info</label>
+              <ul class="list-unstyled explore-car__details">
+                
+                <li><a href="#">Contact {{searchedR.sellercontact}} </a></li>
+                <li><a href="#">Email {{searchedR.selleremail}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Explore Car End-->

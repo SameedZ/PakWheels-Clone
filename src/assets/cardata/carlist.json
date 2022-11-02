@@ -1,0 +1,19 @@
+ [
+
+    {"title":"Prius","price":"340000","location":"Faisalabad","model":"2015","year":"2015","color":"white",
+     "transmission":"CVT", "assembly":"LOREM", "condition":"9", "company":"Toyota","vehicletype":"Car",
+     "mileage":"12","registeredin":"2015","enginecapacity":"1100","lastupdated":"02/04/2020","thumbnail":"assets/cardata/prius.jpg",
+     "sellercontact":"+923051234567","selleremail":"seller@email.com","contacthours":"4:00am to 4:00pm",
+     "sellercomments":"Very Cool Car. 💕"
+    },
+
+    {"title":"Honda Civic","price":"340000","location":"Islamabad","model":"2015","year":"2015","color":"white",
+        "transmission":"CVT", "assembly":"LOREM", "condition":"9","company":"Honda","vehicletype":"Car",
+        "mileage":"12","registeredin":"2015","enginecapacity":"1100","lastupdated":"02/04/2020","thumbnail":"assets/cardata/hondacivic.jpg",
+        "sellercontact":"+923051234567","selleremail":"seller@email.com","contacthours":"4:00am to 4:00pm",
+        "sellercomments":"Very Cool Car. 💕"
+    }
+
+
+    
+]
